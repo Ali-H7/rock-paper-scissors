@@ -73,12 +73,12 @@ function playgame() {
 
 // announce the winner of the 5 rounds
 function winner() {
-    if (humanScore == computerScore) {
-        console.log ("It's a Tie! you tied the computer 5 out of 5")
-    } else if (humanScore < computerScore){
+    if (humanScore > computerScore) {
+        console.log(`You Won! ${humanScore} out of 5 rounds`)
+    } else if (computerScore > humanScore){
         console.log(`You Lose! The computer won by ${computerScore} out of 5 rounds`)
     } else {
-        console.log(`You Won! ${humanScore} out of 5 rounds`)
+        console.log ("It's a Tie! No winner")
     }
 }
 
