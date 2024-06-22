@@ -1,5 +1,3 @@
-console.log("Hello World")
-
 // computer choice
 // random value from 0 to 1 
 // based on the value, choose rock, paper or scissors for the computer 
@@ -24,8 +22,14 @@ function getComputerChoice() {
 // 
 let humanChoice;
 function getHumanChoice() {
-    humanChoice = prompt("message").toUpperCase()
-    return humanChoice; 
+    humanChoice = prompt("Select your choice of weapon rock, paper or scissors").toUpperCase()
+    if (humanChoice === "ROCK" || humanChoice === "PAPER" || humanChoice === "SCISSORS" ) {
+        return humanChoice
+    } else {
+        alert("Invalid input! Select rock, paper or scissors")
+        getHumanChoice()
+    }
+    
 }
 
 // players scores 
@@ -58,3 +62,29 @@ function playRound(humanSelection,ComputerSelection) {
         console.log ("It's a Tie!")
     }
 }
+
+
+
+function playgame() {
+    getComputerChoice()
+    getHumanChoice()
+    playRound(humanChoice,computerChoice)
+}
+
+// announce the winner of the 5 rounds
+function winner() {
+    if (humanScore == computerScore) {
+        console.log ("It's a Tie! you tied the computer 5 out of 5")
+    } else if (humanScore < computerScore){
+        console.log(`You Lose! The computer won by ${computerScore} out of 5 rounds`)
+    } else {
+        console.log(`You Won! ${humanScore} out of 5 rounds`)
+    }
+}
+
+playgame()
+playgame()
+playgame()
+playgame()
+playgame()
+winner()
